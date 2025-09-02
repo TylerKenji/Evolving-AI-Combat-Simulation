@@ -1,0 +1,39 @@
+# Battle AI Configuration
+# Phase 1: Basic simulation parameters
+
+simulation:
+  max_agents: 10
+  battlefield_width: 800
+  battlefield_height: 600
+  time_step: 0.1 # seconds
+  max_simulation_time: 300 # seconds
+  fps: 60
+
+agents:
+  default_health: 100
+  default_speed: 50 # pixels per second
+  collision_radius: 10
+  vision_range: 150
+
+visualization:
+  window_width: 1024
+  window_height: 768
+  background_color: [50, 50, 50]
+  agent_colors:
+    default: [100, 150, 255]
+    team1: [255, 100, 100]
+    team2: [100, 255, 100]
+    dead: [128, 128, 128]
+
+logging:
+  level: INFO
+  file: "logs/battle_ai.log"
+  console: true
+  directory: "logs"
+  max_file_size: 10485760 # 10MB
+  backup_count: 5
+
+development:
+  debug_mode: true
+  show_fps: true
+  show_agent_info: true
