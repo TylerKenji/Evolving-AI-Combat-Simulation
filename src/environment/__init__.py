@@ -7,6 +7,8 @@ for different battle scenarios and simulation needs.
 
 Key Components:
 - BaseEnvironment: Abstract base class for all environments
+- BattleEnvironment: Advanced combat environment with teams and tactical features
+- SimpleEnvironment: Basic 2D battlefield with minimal features
 - EnvironmentState: Enumeration of environment states
 - CollisionType: Types of collisions that can occur
 - TerrainType: Types of terrain tiles
@@ -14,31 +16,47 @@ Key Components:
 - EnvironmentMetrics: Performance and state metrics
 - TerrainTile: Individual terrain tile data
 
-Future environment types (to be implemented):
-- SimpleEnvironment: Basic 2D battlefield with minimal features
-- TerrainEnvironment: Environment with complex terrain systems
-- PhysicsEnvironment: Environment with advanced physics simulation
-- MultiLayerEnvironment: Environment with multiple battlefield layers
+Environment Implementations:
+- BattleEnvironment: Primary combat environment with advanced features
+- SimpleEnvironment: Basic 2D battlefield for testing and development
+- Future: TerrainEnvironment, PhysicsEnvironment
 """
 
 from .base_environment import (
     BaseEnvironment,
     EnvironmentState,
     CollisionType,
-    TerrainType,
     CollisionEvent,
-    EnvironmentMetrics,
-    TerrainTile
+    TerrainType,
+    TerrainTile,
+    EnvironmentMetrics
 )
+
+from .battle_environment import (
+    BattleEnvironment,
+    SpawnStrategy,
+    BattlePhase,
+    TeamInfo
+)
+
 from .simple_environment import SimpleEnvironment
 
 __all__ = [
+    # Base classes and enums
     'BaseEnvironment',
-    'SimpleEnvironment',
-    'EnvironmentState',
-    'CollisionType', 
-    'TerrainType',
+    'EnvironmentState', 
+    'CollisionType',
     'CollisionEvent',
+    'TerrainType',
+    'TerrainTile',
     'EnvironmentMetrics',
-    'TerrainTile'
+    
+    # Environment implementations
+    'BattleEnvironment',
+    'SimpleEnvironment',
+    
+    # Battle environment specific
+    'SpawnStrategy',
+    'BattlePhase', 
+    'TeamInfo'
 ]

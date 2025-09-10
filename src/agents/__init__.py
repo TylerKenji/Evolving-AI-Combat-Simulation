@@ -67,6 +67,18 @@ from .random_agent import RandomAgent
 from .idle_agent import IdleAgent
 from .simple_chase_agent import SimpleChaseAgent
 
+from .decision_framework import (
+    DecisionMaker,
+    DecisionContext,
+    ActionEvaluator,
+    DefaultActionEvaluator,
+    ActionValidator,
+    ActionScore,
+    DecisionPriority,
+    ContextType,
+    create_decision_maker
+)
+
 from .agent_state import (
     # Action and status enums
     ActionType,
@@ -100,6 +112,17 @@ __all__ = [
     'RandomAgent',
     'IdleAgent',
     'SimpleChaseAgent',
+    
+    # Decision-making framework
+    'DecisionMaker',
+    'DecisionContext',
+    'ActionEvaluator',
+    'DefaultActionEvaluator',
+    'ActionValidator',
+    'ActionScore',
+    'DecisionPriority',
+    'ContextType',
+    'create_decision_maker',
     
     # State management enums
     'ActionType',
